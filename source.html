@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sources</title>
+  <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="app2.css">
+  <!-- link rel="stylesheet" href="app2.css" -->
+</head>
+    <header>
+      <style>
+        body header{
+          height: 100vh;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          background: #000000;
+        }
+        body main{
+          z-index: 4;
+          padding: 20px;
+font-size: medium;
+color: #fff;
+position: absolute; /* Ensures that main is positioned in a specific layer */
+background: rgba(0, 0, 0, 0.6); /* Optional: Adds a semi-transparent background to main */
+translate: 0 -800px;
+}
+        body{
+          overflow: hidden;
+        }
+        .menu-checkbox {
+          display: none;
+        }
+        
+        .menu {
+          position: fixed;
+          top: 60px; /* Adjusted to move 40px above the top edge */
+          left: 60px; /* Adjusted to move 40px beyond the left edge */
+          z-index: 100; /* Ensures the menu is above other content */
+        }
+      
+        
+        .menu-dots {
+          width: 5rem;
+          height: 5rem;
+          border-radius: 50%;
+          box-shadow: 0 0 0 0.3rem #3b487a;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          transform: rotate(90deg);
+          transition: 0.3s;
+          cursor: pointer;
+        }
+        
+        .menu-dots:hover {
+          box-shadow: 0 0 0 0.3rem #3b487a, 0 0 0 1rem rgba(22, 30, 63, 0.16);
+          transform: scale(1.2) rotate(90deg);
+        }
+        
+        .menu-dot {
+          width: 0.45rem;
+          height: 0.45rem;
+          background-color: #3b487a;
+          border-radius: 50%;
+        }
+        
+        .menu-dot + .menu-dot {
+          margin-top: 0.3rem;
+        }
+        
+        .menu-items {
+          position: absolute;
+          top: -2.3rem;
+          left: -2.2rem;
+          width: 9.4rem;
+          height: 11rem;
+          color: #fff;
+          pointer-events: none;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          opacity: 0;
+          transition: 0.3s;
+        }
+        
+        .menu-iteml {
+          transform: scale(0.5);
+          filter: blur(10px);
+          transition: 0.3s;
+        }
+        .menu-item:nth-child(odd) {
+          text-align: right;
+        }
+        
+        .menu-item:nth-child(even) {
+          text-align: left;
+        }
+        
+        .menu-item:first-child,
+        .menu-item:last-child {
+          grid-column: span 2;
+          text-align: center;
+        }
+        
+        .menu-checkbox:checked + .menu > .menu-dots {
+          transform: none;
+          box-shadow: 0 0 0 3.4rem #7686c7;
+        }
+        
+        .menu-checkbox:checked + .menu > .menu-items {
+          opacity: 1;
+          pointer-events: auto;
+        }
+        
+        .menu-closer-overlay {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background-color: transparent;
+          border-radius: 50%;
+          z-index: 2;
+          pointer-events: none;
+      
+        }
+        .menu-checkbox:checked + .menu > .menu-items > .top {
+          opacity: 1;
+          transform: none;
+          filter: none;
+          translate: 0 -20px;
+        }
+        .menu-checkbox:checked + .menu > .menu-items > .bottom {
+          opacity: 1;
+          transform: none;
+          filter: none;
+          translate: 0 -3px;
+          align-items: center;
+          
+        }
+        .menu-checkbox:checked + .menu > .menu-items > .right {
+          opacity: 1;
+          transform: none;
+          filter: none;
+          translate: 20px -10px;
+          
+        }
+        .menu-checkbox:checked + .menu > .menu-items > .left {
+          opacity: 1;
+          transform: none;
+          filter: none;
+          translate:  -20px -10px;
+        }
+        
+        .menu-checkbox:checked + .menu > .menu-items > .menu-item:nth-child(1) {
+          transition-delay: 0.05s;
+        }
+        
+        .menu-checkbox:checked + .menu > .menu-items > .menu-item:nth-child(2) {
+          transition-delay: 0.1s;
+        }
+        
+        .menu-checkbox:checked + .menu > .menu-items > .menu-item:nth-child(3) {
+          transition-delay: 0.15s;
+        }
+        
+        .menu-checkbox:checked + .menu > .menu-items > .menu-item:nth-child(4) {
+          transition-delay: 0.2s;
+        }
+        
+        .menu-checkbox:checked + .menu > .menu-items > .menu-item:nth-child(5) {
+          transition-delay: 0.25s;
+        }
+        
+        .menu-checkbox:checked + .menu > .menu-items > .menu-item:nth-child(6) {
+          transition-delay: 0.3s;
+        }
+        
+        .menu-checkbox:checked + .menu > .menu-closer-overlay {
+          pointer-events: auto;
+          cursor: pointer;
+        }
+      </style>
+        <input class="menu-checkbox" id="menu" type="checkbox" name="menu" />
+    <nav class="menu">
+      <label class="menu-dots" for="menu">
+        <span class="menu-dot"></span>
+        <span class="menu-dot"></span>
+        <span class="menu-dot"></span>
+      </label>
+      <ul class="menu-items">
+        <li class ="menu-item top">
+          <a href="index.html"><img height="24" width="24"  viewBox="0 0 24 24" src="25694.png"></a>
+        </li>
+        <li class="menu-item left">
+          <a href="influence.html"><img height="24" width="24"  viewBox="0 0 24 24" src="2804317.png"></a>
+        </li>
+        <li class="menu-item right">
+          <a href="source.html"><img height="24" width="24"  viewBox="0 0 24 24" src="4929587-200.png"></a>
+        </li>
+        <li class="menu-item bottom">
+          <a href="why_its_interesting.html"><img height="24" width="24"  viewBox="0 0 24 24" src="download-removebg-preview.png"></a>
+        </li>
+      
+      </ul>
+      <label for="menu" class="menu-closer-overlay"></label>
+    </nav>
+      </header>
+      <main>
+      <h1>My Sources</h1>
+      <p>Welcome to My Sources page! In our journey through the vast landscape of web design, we've relied on a myriad of resources to gather the most accurate and up-to-date information. Here, we pay homage to those invaluable sources that have illuminated our path:</p>
+      <ul>
+          <li><strong>Websites:</strong> <a href="https://www.w3schools.com">W3Schools</a> - For their exhaustive and well-organized documentation on HTML, CSS, and JavaScript.</li>
+          <li><strong>Conferences:</strong> The annual Web Design International Festival in France, offering workshops and talks from industry leaders.</li>
+          <li><strong>Online Courses:</strong> Coursera and Udemy web design and development courses have been instrumental in our learning and professional development.</li>
+          <li><strong>Statistics and Job Outlook:</strong> <a href="https://www.bls.gov/ooh/">Bureau of Labor Statistics (BLS) Occupational Outlook Handbook</a> - For comprehensive job outlook statistics and reports in the field of web development and digital design.</li>
+      </ul>
+    </main>
+      <p>These resources represent just the tip of the iceberg. We encourage aspiring designers and developers to explore these sources and beyond to enhance their understanding and skills in web design.</p>
+      <div class="backwrap gradient">
+        <div class="back-shapes">
+            <!-- All this img tags was autogenerated by custom written js tool -->
+            <span class="floating circle" style="top:66.59856996935649%;left:13.020833333333334%;animation-delay:-0.9s;"></span>
+            <span class="floating triangle" style="top:31.46067415730337%;left:33.59375%;animation-delay:-4.8s;"></span>
+            <span class="floating cross" style="top:76.50663942798774%;left:38.020833333333336%;animation-delay:-4s;"></span>
+            <span class="floating square" style="top:21.450459652706844%;left:14.0625%;animation-delay:-2.8s;"></span>
+            <span class="floating square" style="top:58.12053115423902%;left:56.770833333333336%;animation-delay:-2.15s;"></span>
+            <span class="floating square" style="top:8.682328907048008%;left:72.70833333333333%;animation-delay:-1.9s;"></span>
+            <span class="floating cross" style="top:31.3585291113381%;left:58.541666666666664%;animation-delay:-0.65s;"></span>
+            <span class="floating cross" style="top:69.96935648621042%;left:81.45833333333333%;animation-delay:-0.4s;"></span>
+            <span class="floating circle" style="top:15.117466802860061%;left:32.34375%;animation-delay:-4.1s;"></span>
+            <span class="floating circle" style="top:13.074565883554648%;left:45.989583333333336%;animation-delay:-3.65s;"></span>
+            <span class="floating cross" style="top:55.87334014300306%;left:27.135416666666668%;animation-delay:-2.25s;"></span>
+            <span class="floating cross" style="top:49.54034729315628%;left:53.75%;animation-delay:-2s;"></span>
+            <span class="floating cross" style="top:34.62717058222676%;left:49.635416666666664%;animation-delay:-1.55s;"></span>
+            <span class="floating cross" style="top:33.19713993871297%;left:86.14583333333333%;animation-delay:-0.95s;"></span>
+            <span class="floating square" style="top:28.19203268641471%;left:25.208333333333332%;animation-delay:-4.45s;"></span>
+            <span class="floating circle" style="top:39.7344228804903%;left:10.833333333333334%;animation-delay:-3.35s;"></span>
+            <span class="floating triangle" style="top:77.83452502553627%;left:24.427083333333332%;animation-delay:-2.3s;"></span>
+            <span class="floating triangle" style="top:2.860061287027579%;left:47.864583333333336%;animation-delay:-1.75s;"></span>
+            <span class="floating triangle" style="top:71.3993871297242%;left:66.45833333333333%;animation-delay:-1.25s;"></span>
+            <span class="floating triangle" style="top:31.256384065372828%;left:76.92708333333333%;animation-delay:-0.65s;"></span>
+            <span class="floating triangle" style="top:46.47599591419816%;left:38.90625%;animation-delay:-0.35s;"></span>
+            <span class="floating cross" style="top:3.4729315628192032%;left:19.635416666666668%;animation-delay:-4.3s;"></span>
+            <span class="floating cross" style="top:3.575076608784474%;left:6.25%;animation-delay:-4.05s;"></span>
+            <span class="floating cross" style="top:77.3237997957099%;left:4.583333333333333%;animation-delay:-3.75s;"></span>
+            <span class="floating cross" style="top:0.9193054136874361%;left:71.14583333333333%;animation-delay:-3.3s;"></span>
+            <span class="floating square" style="top:23.6976506639428%;left:63.28125%;animation-delay:-2.1s;"></span>
+            <span class="floating square" style="top:81.30745658835546%;left:45.15625%;animation-delay:-1.75s;"></span>
+            <span class="floating square" style="top:60.9805924412666%;left:42.239583333333336%;animation-delay:-1.45s;"></span>
+            <span class="floating square" style="top:29.009193054136876%;left:93.90625%;animation-delay:-1.05s;"></span>
+            <span class="floating square" style="top:52.093973442288046%;left:68.90625%;animation-delay:-0.7s;"></span>
+            <span class="floating square" style="top:81.51174668028601%;left:83.59375%;animation-delay:-0.35s;"></span>
+            <span class="floating square" style="top:11.542390194075587%;left:91.51041666666667%;animation-delay:-0.1s;"></span>
+        </div>
+      </div>
+
+
+</body>
+</html>

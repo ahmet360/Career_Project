@@ -1,27 +1,13 @@
-
-
-.container {
-    margin: auto;
-    
+/* Container */
+.ccontainer {
+  max-width: 1100px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 20px;
+  position: relative;
 }
 
-header {
-    background: #333;
-    color: #fff;
-    padding-top: 30px;
-    min-height: 40px;
-    border-bottom: #0779e4 3px solid;
-    font-size: 5px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-
-header a {
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 16px;
-}
-
+/* Navigation */
 nav ul {
     padding: 0;
     list-style: none;
@@ -36,12 +22,49 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
+/* Main content styling */
 main {
-    padding: 20px;
-    font-size: medium;
-    color:#fff;
+  padding: 20px;
+  font-size: medium;
+  color: #fff;
+  position: relative; /* Ensures that main is positioned in a specific layer */
+  z-index: 2; /* Higher than the default, so it's above background elements */
+  background: rgba(0, 0, 0, 0.6); /* Optional: Adds a semi-transparent background to main */
 }
 
+
+/* Title Styling */
+main > h1, .title { /* Adjust based on your HTML structure */
+    font-size: 2.5rem; /* Large, readable title */
+    color: #eaecc6; /* A color that stands out */
+    text-align: center; /* Center the title for emphasis */
+    margin-bottom: 2rem; /* Space between title and content */
+    font-family: 'Georgia', serif; /* More formal font for titles */
+}
+
+/* Subtitle styling for sections */
+section h2 {
+    font-size: 2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    color: #2bc0e4; /* Color to distinguish subtitles */
+}
+
+/* Paragraph styling */
+p {
+    font-size: 1rem; /* Standard size for readability */
+    line-height: 1.6; /* Improves readability */
+    margin-bottom: 1rem; /* Space between paragraphs */
+}
+
+/* List styling */
+main ul {
+    list-style-type: disc; /* Adds bullets to lists */
+    margin-left: 20px; /* Indent list items */
+    line-height: 1.6; /* Consistent with paragraph styling */
+}
+
+/* Footer */
 footer {
     background: #333;
     color: #fff;
@@ -51,4 +74,5 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
+    font-size: 0.8rem;
 }

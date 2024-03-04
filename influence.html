@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Homepage</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="app3.css">
+</head>
+<body>
+  <header>
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(to left, #332d2d, rgba(125, 96, 218, 0.8));
+      }
+      nav ul{
+        translate:0 20px;
+      }
+      .menu-checkbox {
+        display: none;
+      }
+      
+      .menu {
+        position: fixed;
+        top: 60px; /* Adjusted to move 40px above the top edge */
+        left: 60px; /* Adjusted to move 40px beyond the left edge */
+        z-index: 100; /* Ensures the menu is above other content */
+      }
+    
+      
+      .menu-dots {
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        box-shadow: 0 0 0 0.3rem #161e3f;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: rotate(90deg);
+        transition: 0.3s;
+        cursor: pointer;
+      }
+      
+      .menu-dots:hover {
+        box-shadow: 0 0 0 0.3rem #161e3f, 0 0 0 1rem rgba(22, 30, 63, 0.16);
+        transform: scale(1.2) rotate(90deg);
+      }
+      
+      .menu-dot {
+        width: 0.45rem;
+        height: 0.45rem;
+        background-color: #161e3f;
+        border-radius: 50%;
+      }
+      
+      .menu-dot + .menu-dot {
+        margin-top: 0.3rem;
+      }
+      
+      .menu-items {
+        position: absolute;
+        top: -2.3rem;
+        left: -2.2rem;
+        width: 9.4rem;
+        height: 11rem;
+        color: #fff;
+        pointer-events: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        opacity: 0;
+        transition: 0.3s;
+      }
+      
+      .menu-iteml {
+        transform: scale(0.5);
+        filter: blur(10px);
+        transition: 0.3s;
+      }
+      .menu-item:nth-child(odd) {
+        text-align: right;
+      }
+      
+      .menu-item:nth-child(even) {
+        text-align: left;
+      }
+      
+      .menu-item:first-child,
+      .menu-item:last-child {
+        grid-column: span 2;
+        text-align: center;
+      }
+      
+      .menu-checkbox:checked + .menu > .menu-dots {
+        transform: none;
+        box-shadow: 0 0 0 3.4rem #7686c7;
+      }
+      
+      .menu-checkbox:checked + .menu > .menu-items {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      
+      .menu-closer-overlay {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        border-radius: 50%;
+        z-index: 2;
+        pointer-events: none;
+    
+      }
+      .menu-checkbox:checked + .menu > .menu-items > .top {
+        opacity: 1;
+        transform: none;
+        filter: none;
+        translate: 0 -20px;
+      }
+      .menu-checkbox:checked + .menu > .menu-items > .bottom {
+        opacity: 1;
+        transform: none;
+        filter: none;
+        translate: 0 -3px;
+        align-items: center;
+        
+      }
+      .menu-checkbox:checked + .menu > .menu-items > .right {
+        opacity: 1;
+        transform: none;
+        filter: none;
+        translate: 20px -10px;
+        
+      }
+      .menu-checkbox:checked + .menu > .menu-items > .left {
+        opacity: 1;
+        transform: none;
+        filter: none;
+        translate:  -20px -10px;
+      }
+      
+      .menu-checkbox:checked + .menu > .menu-items > .menu-item:nth-child(1) {
+        transition-delay: 0.05s;
+      }
+      
+      .menu-checkbox:checked + .menu > .menu-items > .menu-item:nth-child(2) {
+        transition-delay: 0.1s;
+      }
+      
+      .menu-checkbox:checked + .menu > .menu-items > .menu-item:nth-child(3) {
+        transition-delay: 0.15s;
+      }
+      
+      .menu-checkbox:checked + .menu > .menu-items > .menu-item:nth-child(4) {
+        transition-delay: 0.2s;
+      }
+      
+      .menu-checkbox:checked + .menu > .menu-items > .menu-item:nth-child(5) {
+        transition-delay: 0.25s;
+      }
+      
+      .menu-checkbox:checked + .menu > .menu-items > .menu-item:nth-child(6) {
+        transition-delay: 0.3s;
+      }
+      
+      .menu-checkbox:checked + .menu > .menu-closer-overlay {
+        pointer-events: auto;
+        cursor: pointer;
+      }
+    </style>
+    <input class="menu-checkbox" id="menu" type="checkbox" name="menu" />
+<nav class="menu">
+  <label class="menu-dots" for="menu">
+    <span class="menu-dot"></span>
+    <span class="menu-dot"></span>
+    <span class="menu-dot"></span>
+  </label>
+  <ul class="menu-items">
+    <li class ="menu-item top">
+      <a href="index.html"><img height="24" width="24"  viewBox="0 0 24 24" src="25694.png"></a>
+    </li>
+    <li class="menu-item left">
+      <a href="influence.html"><img height="24" width="24"  viewBox="0 0 24 24" src="2804317.png"></a>
+    </li>
+    <li class="menu-item right">
+      <a href="source.html"><img height="24" width="24"  viewBox="0 0 24 24" src="4929587-200.png"></a>
+    </li>
+    <li class="menu-item bottom">
+      <a href="why_its_interesting.html"><img height="24" width="24"  viewBox="0 0 24 24" src="download-removebg-preview.png"></a>
+    </li>
+  
+  </ul>
+  <label for="menu" class="menu-closer-overlay"></label>
+</nav>
+  </header>
+  <main>
+    <h1>The Influence of Web Design</h1>
+    <p>Web design is not just about creating visually appealing websites. It's a pivotal
+       factor that influences user experience, accessibility, and ultimately, the success of a website. The influence of web design extends into several areas:</p>
+    <ul>
+        <li><strong>User Experience (UX):</strong> Good web design fosters a seamless, intuitive user experience, encouraging longer site visits and higher conversion rates.</li>
+        <li><strong>Accessibility:</strong> Inclusive design practices ensure websites are usable for people of all abilities, reflecting a commitment to diversity and equality.</li>
+        <li><strong>SEO:</strong> Search engines favor well-designed, responsive websites, affecting a site's visibility and traffic.</li>
+        <li><strong>Brand Perception:</strong> The design of a website significantly impacts how users perceive a brand, influencing trust and credibility.</li>
+    </ul>
+    <p>The evolution of web design continues to shape the digital landscape, pushing the boundaries of what's possible on the web.</p>
+  </main>
+
+  <div class="lines">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
+  
+
+</body>
+</html>
